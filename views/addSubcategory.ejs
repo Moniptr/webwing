@@ -1,0 +1,50 @@
+<html>
+    <body>
+        <%- include('adminheader') %>
+        <div id="contact" class="contact ">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="titlepage">
+                        <h2><strong class="yellow">Contact us</strong><br>Add SubCategory </h2>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-8 offset-md-2">
+                     <form id="post_form" class="contact_form"  action="/admin/addSubcategory" enctype="multipart/form-data" method="post">
+                        <div class="row">
+
+                           <div class="col-md-12 ">
+                              <select class="contact_control" name="categoryname">
+                                 <option >Select Category</option>
+                                 <% for(let row of clist){ %>
+                                    <option style="color: black;"><%= row.categorynm %></option>
+                                    <% } %>
+                                 </select>
+
+                           </div>
+                           
+                           <div class="col-md-12 ">
+                              <input class="contact_control" placeholder="Sub-Category Name" type="text" name="subcategorynm" required>
+                           </div>
+
+                           
+
+                           <div class="col-md-12">
+                              <input class="contact_control"  type="file" name="subcategoryicon" required>
+                           </div>
+                          
+                           <div class="col-md-12">
+                              <!-- <button class="send_btn">Send</button> -->
+                              <input class="send_btn" type="submit" value="submit">
+                           </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </div>
+         <%-include('adminfooter') %>
+    </body>
+</html>

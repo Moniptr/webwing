@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <style>
+      th{
+        font-weight: bolder;
+        background-color: black;
+        color: white;
+      }
+      td{
+        background-color: lightblue;
+        color: brown;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+<%- include('adminheader') %>
+  
+<table style="width: 80%; text-align:center; margin-top: 20px; margin-left: 150px; margin-bottom: 20px; font-weight: 500px; box-shadow: 5px 5px 10px black;" border="5px"  >
+  <tr>
+    <th>ID</th>
+    <th>name</th>
+    <th>email</th>
+    <th>Username</th>
+    <th>password</th>
+    <th>Address</th>
+    <th>PhoneNumber</th>
+    <th>status</th>
+    <th>status</th>
+
+  </tr>
+  <% for (let row of userDetails){ %>
+    <tr>
+      <td><%= row._id %></td>
+      <td><%= row.name %></td>
+      <td><%= row.email %></td>
+      <td><%= row.Username %></td>
+      <td><%= row.password %></td>
+      <td><%= row.address %></td>
+      <td><%= row.phonenumber %></td>
+      <!-- <td><%= row.status %></td> -->
+      
+      <td><% if(row.status==1){ %>
+        <font ><a style="color: green;" href="/admin/manageuserstatus?s=block&regid=<%= row._id %>" >Active User</a></font> </td>
+    <% } else
+    if(row.status==0) { %> 
+        <td> <font ><a style="color: blue;" href="/admin/manageuserstatus?s=verify&regid=<%= row._id %>">De-active User</a></font>
+        <% } %></td>
+
+        <td><font ><a style="color: red;"href="/admin/manageuserstatus?s=delete&regid=<%= row._id %>">Delete User</a></font>
+        </td>
+    </tr>
+    <% } %>
+</table>
+<%- include('adminfooter') %>
+  </html>

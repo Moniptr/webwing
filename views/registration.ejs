@@ -1,0 +1,55 @@
+<html>
+    <body>
+        <%-include('header') %>
+        <div id="contact" class="contact ">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="titlepage">
+                        <h2><strong class="yellow">Contact us</strong><br>Register Yourself</h2>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-8 offset-md-2">
+                     <form id="post_form" class="contact_form"  action="/registration" method="post">
+                        <div class="row">
+                           <div class="col-md-12 ">
+                              <input class="contact_control" placeholder="Name" type="text" name="name" required>
+                           </div>
+
+                           <div class="col-md-12 ">
+                            <input class="contact_control" placeholder="Email" type="email" name="email" required>
+                         </div>
+
+                         <div class="col-md-12 ">
+                            <input class="contact_control" placeholder=" Username" type="text" name="Username" required>
+                         </div>
+                           <div class="col-md-12">
+                              <input class="contact_control" placeholder="Password" type="password" name="password" required>
+                           </div>
+
+                           <div class="col-md-12">
+                            <input class="contact_control" placeholder="Address" type="text" name="address" required>
+                         </div>
+
+                         <div class="col-md-12">
+                            <input class="contact_control" placeholder="Phone Number" type="text" name="phonenumber" required>
+                         </div>
+                          
+                           <div class="col-md-12">
+                              <!-- <button class="send_btn">Send</button> -->
+                              <input class="send_btn" type="submit" value="submit">
+                           </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </div>
+         
+
+        <%-include('footer') %>
+
+    </body>
+</html>
